@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Membres | BusinessFlow AI</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar"></aside>
+      <div class="app-content">
+        <header class="app-header">
+          <div style="display:flex;align-items:center">
+            <button class="mobile-sidebar-toggle" aria-label="Ouvrir la navigation">☰</button>
+            <div><p class="eyebrow" style="margin:0 0 4px">Organisation</p><h1>Membres et accès</h1></div>
+          </div>
+          <div class="header-user"><div class="avatar">BF</div><strong class="user-copy">BusinessFlow</strong></div>
+        </header>
+        <main class="page-content">
+          <section class="card panel">
+            <div class="panel-heading"><div><h2>Équipe de l’espace</h2><p class="muted">Gérez les rôles et suivez les activités de l’espace. Les changements sont enregistrés dans ce navigateur.</p></div><span class="pill" id="member-count">0</span></div>
+            <div class="panel-heading">
+              <input id="member-search" type="search" placeholder="Rechercher un membre..." aria-label="Rechercher un membre" />
+              <select id="member-role-filter" aria-label="Filtrer par rôle"><option value="all">Tous les rôles</option><option>Admin</option><option>Manager</option><option>Collaborateur</option></select>
+              <button class="btn btn-primary" id="invite-member" data-permission="manageMembers" type="button">+ Inviter un membre</button>
+            </div>
+            <div id="member-permission-note" class="notice" hidden></div>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Nom</th><th>E-mail</th><th>Rôle</th><th>Statut</th><th>Ajouté le</th><th>Actions</th></tr></thead><tbody id="member-list"><tr><td colspan="6" class="empty-state">Chargement…</td></tr></tbody></table></div>
+          </section>
+          <section class="card panel" style="margin-top:18px">
+            <div class="panel-heading"><h2>Activité récente de l’espace</h2><span class="pill">Locale</span></div>
+            <div id="member-activity" class="empty-state">Aucune activité enregistrée.</div>
+          </section>
+          <dialog id="invite-dialog" class="card document-dialog">
+            <form id="invite-form" class="panel">
+              <div class="panel-heading"><h2>Inviter un membre</h2><button class="icon-btn" type="button" id="close-invite" aria-label="Fermer">×</button></div>
+              <p class="muted">L’accès est local à ce navigateur. Le mot de passe temporaire s’affiche après création ; communiquez-le par un canal sécurisé.</p>
+              <div class="form-field"><label for="member-name">Nom complet</label><input id="member-name" name="name" required maxlength="80" /></div>
+              <div class="form-field"><label for="member-email">Adresse e-mail</label><input id="member-email" name="email" type="email" required /></div>
+              <div class="form-field"><label for="member-role">Rôle</label><select id="member-role" name="role"><option>Collaborateur</option><option>Manager</option></select></div>
+              <div id="invite-message" aria-live="polite"></div>
+              <button class="btn btn-primary full" type="submit">Créer l’accès local</button>
+            </form>
+          </dialog>
+        </main>
+      </div>
+    </div>
+    <script src="../js/i18n/fr.js"></script><script src="../js/i18n/en.js"></script><script src="../js/i18n/ar.js"></script>
+    <script src="../js/storage.js"></script><script src="../js/auth-service.js"></script><script src="../js/main.js"></script><script src="../js/members.js"></script>
+  </body>
+</html>

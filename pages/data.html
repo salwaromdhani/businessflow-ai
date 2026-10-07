@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Données ERP / CRM | BusinessFlow AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar"></aside>
+      <div class="app-content">
+        <header class="app-header">
+          <div style="display:flex;align-items:center">
+            <button class="mobile-sidebar-toggle" aria-label="Ouvrir la navigation">☰</button>
+            <div><p class="eyebrow" style="margin:0 0 4px">Données</p><h1>Documents & ERP/CRM</h1></div>
+          </div>
+          <div class="header-user"><div class="avatar">CM</div><strong class="user-copy">Clara Martin</strong></div>
+        </header>
+        <main class="page-content">
+          <section class="card panel">
+            <div class="panel-heading"><h2>Importer des données ERP / CRM</h2><span class="pill">CSV · XLSX · JSON</span></div>
+            <p class="muted">Importez vos fichiers CSV, XLSX ou JSON. Le traitement reste local dans cette démo ; l’API backend est préparée mais désactivée.</p>
+            <form id="import-form" class="import-dropzone">
+              <strong>Choisir un fichier CSV, XLSX ou JSON</strong>
+              <label for="dataset-file">Sélectionner un fichier</label>
+              <input id="dataset-file" name="file" type="file" accept=".csv,.xlsx,.json,application/json,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" required />
+              <button class="btn btn-primary" type="submit">Importer</button>
+              <div id="import-message" aria-live="polite"></div>
+            </form>
+          </section>
+          <section class="card panel" style="margin-top:18px">
+            <div class="panel-heading"><h2>Documents de l’entreprise</h2><span class="pill">PDF · DOCX · XLSX · CSV · JSON · TXT</span></div>
+            <p class="muted">Documents enregistrés dans le stockage local privé de ce navigateur. L’upload serveur et l’intelligence documentaire nécessitent un backend.</p>
+            <form id="document-form" class="import-dropzone">
+              <label for="document-file">Sélectionner un document à ajouter</label>
+              <input id="document-file" name="document" type="file" accept=".pdf,.docx,.xlsx,.csv,.json,.txt,application/pdf,text/plain" required />
+              <button class="btn btn-primary" type="submit">Ajouter le document</button>
+              <div id="document-progress" class="progress-holder" hidden><label id="document-progress-label" for="document-progress-bar">Prêt</label><progress id="document-progress-bar" max="100" value="0"></progress></div>
+              <div id="document-message" aria-live="polite"></div>
+            </form>
+            <div class="panel-heading" style="margin-top:22px">
+              <input id="document-search" type="search" placeholder="Rechercher un document..." aria-label="Rechercher un document" />
+              <select id="document-type-filter" aria-label="Filtrer par type"><option value="all">Tous les formats</option><option value="PDF">PDF</option><option value="DOCX">DOCX</option><option value="XLSX">XLSX</option><option value="CSV">CSV</option><option value="JSON">JSON</option><option value="TXT">TXT</option></select>
+            </div>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Document</th><th>Type</th><th>Taille</th><th>Importé par</th><th>Date</th><th>Statut / progression</th><th>Actions</th></tr></thead><tbody id="document-list"><tr><td colspan="7" class="empty-state">Aucun document pour le moment.</td></tr></tbody></table></div>
+            <div id="document-analysis" class="notice" aria-live="polite" hidden></div>
+          </section>
+          <section class="card panel" style="margin-top:18px">
+            <div class="panel-heading"><h2>Aperçu des données importées</h2><span id="dataset-count" class="pill">0</span></div>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Fichier</th><th>Taille</th><th>Lignes</th><th>Source</th><th>Importé par</th><th>Date d’importation</th><th>Statut</th><th></th></tr></thead><tbody id="import-list"><tr><td colspan="8" class="empty-state">Aucun fichier importé.</td></tr></tbody></table></div>
+          </section>
+          <section id="data-analytics" class="card panel" style="margin-top:18px">
+            <div class="panel-heading"><h2>Analyse</h2><span class="pill">Données locales</span></div>
+            <div id="analytics-results" class="chart-data"><div class="empty-state">En attente d’analyse</div></div>
+            <p class="muted" style="margin-bottom:0">Le backend d’analyse n’est pas connecté. Les indicateurs affichés sont calculés localement à partir des colonnes reconnues ; ils ne remplacent pas une analyse serveur.</p>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://unpkg.com/mammoth@1.8.0/mammoth.browser.min.js"></script>
+    <script src="../js/i18n/fr.js"></script><script src="../js/i18n/en.js"></script><script src="../js/i18n/ar.js"></script>
+    <script src="../js/storage.js"></script><script src="../js/documents-store.js"></script><script src="../js/data-parser.js"></script><script src="../js/auth-service.js"></script><script src="../js/api.js"></script><script src="../js/main.js"></script><script src="../js/data.js"></script><script src="../js/documents.js"></script>
+    <dialog id="document-dialog" class="card document-dialog"><form method="dialog"><div class="panel-heading"><h2 id="document-dialog-title">Document</h2><button class="icon-btn" aria-label="Fermer">×</button></div></form><pre id="document-preview"></pre></dialog>
+  </body>
+</html>

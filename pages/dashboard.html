@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard | BusinessFlow AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar"></aside>
+      <div class="app-content">
+        <header class="app-header">
+          <div style="display: flex; align-items: center">
+            <button
+              class="mobile-sidebar-toggle"
+              aria-label="Ouvrir la navigation"
+            >
+              ☰
+            </button>
+            <div>
+              <p class="eyebrow" style="margin: 0 0 4px">Pilotage · TND</p>
+              <h1>Bonjour 👋</h1>
+            </div>
+          </div>
+          <div class="header-user">
+            <button class="notification" aria-label="Notifications">♧</button>
+            <div class="avatar">CM</div>
+            <div class="user-copy">
+              <strong>Clara Martin</strong
+              ><small class="muted" style="display: block"
+                class="user-role">Admin</small
+              >
+            </div>
+          </div>
+        </header>
+        <main class="page-content">
+          <div class="stats-grid">
+            <article class="card stat-card">
+              <div class="stat-top">
+                <span>Chiffre d'affaires</span><span class="stat-icon">↗</span>
+              </div>
+              <div class="stat-number" data-kpi="revenue">—</div>
+              <span class="stat-trend">Importez des données pour calculer</span>
+            </article>
+            <article class="card stat-card">
+              <div class="stat-top">
+                <span>Depenses</span><span class="stat-icon">◌</span>
+              </div>
+              <div class="stat-number" data-kpi="expenses">—</div>
+              <span class="stat-trend">Importez des données pour calculer</span>
+            </article>
+            <article class="card stat-card">
+              <div class="stat-top">
+                <span>Taches en cours</span><span class="stat-icon">✓</span>
+              </div>
+              <div class="stat-number" data-kpi="tasks">—</div>
+              <span class="stat-trend">À partir de vos tâches</span>
+            </article>
+            <article class="card stat-card">
+              <div class="stat-top">
+                <span>Performance globale</span><span class="stat-icon">✦</span>
+              </div>
+              <div class="stat-number" data-kpi="health">—</div>
+              <span class="stat-trend">Health score · imports requis</span>
+            </article>
+          </div>
+          <div class="stats-grid secondary-kpis">
+            <article class="card stat-card"><div class="stat-top"><span>Clients</span><span class="stat-icon">♙</span></div><div class="stat-number" data-kpi="customers">—</div><span class="stat-trend">Données importées ou CRM</span></article>
+            <article class="card stat-card"><div class="stat-top"><span>Ventes / commandes</span><span class="stat-icon">▤</span></div><div class="stat-number" data-kpi="orders">—</div><span class="stat-trend">Période importée</span></article>
+            <article class="card stat-card"><div class="stat-top"><span>Projets</span><span class="stat-icon">◈</span></div><div class="stat-number" data-kpi="projects">—</div><span class="stat-trend">Projet(s) suivi(s)</span></article>
+            <article class="card stat-card"><div class="stat-top"><span>Croissance</span><span class="stat-icon">↗</span></div><div class="stat-number" data-kpi="growth">—</div><span class="stat-trend">Dates requises</span></article>
+          </div>
+          <div class="dashboard-grid">
+            <section class="card panel">
+              <div class="panel-heading">
+                <h2>Evolution de l'activite</h2>
+                <select aria-label="Periode">
+                  <option>6 derniers mois</option>
+                  <option>Cette annee</option>
+                </select>
+              </div>
+              <div class="chart">
+                <div id="dashboard-revenue-chart" class="chart-bars" aria-live="polite"></div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  color: var(--muted);
+                  font-size: 0.7rem;
+                  margin-top: 8px;
+                "
+              >
+                <span id="dashboard-chart-note">Importez des données datées pour afficher la tendance.</span>
+              </div>
+            </section>
+            <section class="card panel ai-panel">
+              <div class="panel-heading">
+                <h2>Insights de l’activité</h2>
+                <span>✧</span>
+              </div>
+              <span class="ai-badge">DONNÉES LOCALES · PAS D’IA CONNECTÉE</span>
+              <div id="dashboard-local-insights" class="ai-insight">
+                <p>Importez vos données et gérez vos tâches pour afficher des constats calculés localement.</p>
+              </div>
+              <a
+                href="ai-assistant.html"
+                class="btn btn-primary"
+                style="width: 100%; margin-top: 16px"
+                >Ouvrir l'assistant →</a
+              >
+            </section>
+          </div>
+          <section class="card panel activity-panel">
+            <div class="panel-heading">
+              <h2>Activites recentes</h2>
+              <a href="tasks.html" class="muted" style="font-size: 0.8rem"
+                >Voir les taches →</a
+              >
+            </div>
+            <div id="recent-activity" class="empty-state">Aucune activité récente.</div>
+          </section>
+          <div class="dashboard-grid" style="margin-top:18px">
+            <section class="card panel">
+              <div class="panel-heading"><h2>Projets récents</h2><a href="tasks.html" class="muted">Voir les tâches →</a></div>
+              <div id="dashboard-projects"></div>
+            </section>
+            <section class="card panel">
+              <div class="panel-heading"><h2>Alertes</h2></div>
+              <div id="dashboard-alerts"></div>
+            </section>
+          </div>
+          <section class="card panel activity-panel">
+            <div class="panel-heading"><h2>Documents récents</h2><a href="data.html">Ouvrir les documents →</a></div>
+            <div id="recent-documents" class="empty-state">Aucun document importé.</div>
+          </section>
+          <section class="card panel" style="margin-top:18px">
+            <div class="panel-heading"><h2>Résumé local</h2><a class="btn btn-primary" href="ai-assistant.html">Accéder au chat IA →</a></div>
+            <p id="dashboard-summary" class="muted">Les chiffres et recommandations sont calculés localement lorsqu’un jeu de données est importé. Aucun modèle d’IA n’est connecté.</p>
+            <a class="btn btn-secondary" href="data.html">Importer des données ERP / CRM</a>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="../js/i18n/fr.js"></script><script src="../js/i18n/en.js"></script><script src="../js/i18n/ar.js"></script><script src="../js/storage.js"></script><script src="../js/documents-store.js"></script>
+    <script src="../js/auth-service.js"></script><script src="../js/main.js"></script>
+    <script src="../js/dashboard.js"></script>
+  </body>
+</html>

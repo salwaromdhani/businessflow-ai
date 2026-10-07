@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Taches | BusinessFlow AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar"></aside>
+      <div class="app-content">
+        <header class="app-header">
+          <div style="display: flex; align-items: center">
+            <button
+              class="mobile-sidebar-toggle"
+              aria-label="Ouvrir la navigation"
+            >
+              ☰
+            </button>
+            <div>
+              <p class="eyebrow" style="margin: 0 0 4px">Organisation</p>
+              <h1>Gestion des taches</h1>
+            </div>
+          </div>
+          <div class="header-user">
+            <div class="avatar">CM</div>
+            <strong class="user-copy">Clara Martin</strong>
+          </div>
+        </header>
+        <main class="page-content">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: end;
+              gap: 18px;
+              flex-wrap: wrap;
+              margin-bottom: 24px;
+            "
+          >
+            <div>
+              <p class="muted" style="margin: 0">
+                Suivez les priorites de votre equipe.
+              </p>
+            </div>
+            <button class="btn btn-primary" id="new-task" data-permission="manageData">
+              + Nouvelle tache
+            </button>
+          </div>
+          <section class="card panel">
+            <div class="panel-heading">
+              <h2>Mes taches</h2>
+              <div style="display: flex; gap: 8px">
+                <input
+                  id="task-search"
+                  placeholder="Rechercher..."
+                  style="
+                    padding: 8px 10px;
+                    border: 1px solid var(--line);
+                    border-radius: 8px;
+                    max-width: 160px;
+                  "
+                /><select id="task-filter" aria-label="Filtrer par statut">
+                  <option value="all">Tous les statuts</option>
+                  <option value="todo">A faire</option>
+                  <option value="progress">En cours</option>
+                  <option value="done">Terminee</option>
+                </select>
+              </div>
+            </div>
+            <div id="task-list"></div>
+          </section>
+          <dialog
+            id="task-dialog"
+            class="card"
+            style="border: 0; padding: 0; width: min(460px, calc(100% - 32px))"
+          >
+            <form method="dialog" id="task-form" class="panel">
+              <div class="panel-heading">
+                <h2>Nouvelle tache</h2>
+                <button class="icon-btn" value="cancel" formnovalidate aria-label="Fermer">
+                  ×
+                </button>
+              </div>
+              <div class="form-field">
+                <label for="task-title">Titre</label
+                ><input
+                  id="task-title"
+                  name="title"
+                  required
+                  placeholder="Ex. Preparer le brief client"
+                />
+              </div>
+              <div class="form-field">
+                <label for="task-owner">Responsable</label
+                ><input
+                  id="task-owner"
+                  name="owner"
+                  required
+                  placeholder="Prenom Nom"
+                />
+              </div>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="task-project">Projet</label>
+                  <input id="task-project" name="project" placeholder="Projet" />
+                </div>
+                <div class="form-field">
+                  <label for="task-due-date">Echeance</label>
+                  <input id="task-due-date" name="dueDate" type="date" />
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="task-status">Statut</label
+                ><select id="task-status" name="status">
+                  <option value="todo">A faire</option>
+                  <option value="progress">En cours</option>
+                  <option value="done">Terminee</option>
+                </select>
+              </div>
+              <button class="btn btn-primary full" type="submit">
+                Ajouter la tache
+              </button>
+            </form>
+          </dialog>
+        </main>
+      </div>
+    </div>
+    <script src="../js/i18n/fr.js"></script><script src="../js/i18n/en.js"></script><script src="../js/i18n/ar.js"></script><script src="../js/auth-service.js"></script><script src="../js/main.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/tasks.js"></script>
+  </body>
+</html>

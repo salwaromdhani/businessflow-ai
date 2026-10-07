@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assistant AI | BusinessFlow AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar"></aside>
+      <div class="app-content">
+        <header class="app-header">
+          <div style="display: flex; align-items: center">
+            <button
+              class="mobile-sidebar-toggle"
+              aria-label="Ouvrir la navigation"
+            >
+              ☰
+            </button>
+            <div>
+              <p class="eyebrow" style="margin: 0 0 4px">Espace d'aide</p>
+              <h1>BusinessFlow AI Assistant</h1>
+            </div>
+          </div>
+          <div class="header-user">
+            <div class="avatar">CM</div>
+            <strong class="user-copy">Clara Martin</strong>
+          </div>
+        </header>
+        <main class="page-content">
+          <section class="assistant-layout">
+            <div class="card assistant-main">
+              <div class="assistant-intro">
+                <span class="feature-icon">✧</span>
+                <div>
+                  <h2>Posez une question sur vos données d’entreprise</h2>
+                  <p class="muted">
+                    L’assistant utilise actuellement des réponses simulées. Une connexion API est préparée, mais aucune API n’est activée.
+                  </p>
+                </div>
+              </div>
+              <div
+                id="chat-messages"
+                class="chat-messages"
+                aria-live="polite"
+              ></div>
+              <form id="chat-form" class="chat-form">
+                <input
+                  id="chat-input"
+                  placeholder="Ecrivez votre question..."
+                  autocomplete="off"
+                  required
+                /><button class="btn btn-primary" type="submit" aria-label="Envoyer">
+                  →
+                </button>
+              </form>
+            </div>
+            <aside class="card suggestions">
+              <h2>Suggestions</h2>
+              <p class="muted">Essayez une question</p>
+              <button data-prompt="Quelle est l'evolution de mon chiffre d'affaires ?">
+                Quelle est l'evolution de mon chiffre d'affaires ?</button
+              ><button data-prompt="Quels sont mes meilleurs clients ?">
+                Quels sont mes meilleurs clients ?</button
+              ><button data-prompt="Quels produits sont les plus performants ?">
+                Quels produits sont les plus performants ?</button
+              ><button data-prompt="Quels indicateurs sont en baisse ?">
+                Quels indicateurs sont en baisse ?</button
+              ><button data-prompt="Quelles sont mes priorites cette semaine ?">
+                Quelles sont mes priorites cette semaine ?</button
+              ><button data-prompt="Comment evoluent mes performances ?">
+                Comment evoluent mes performances ?</button
+              ><button data-prompt="Quelles taches sont en retard ?">
+                Quelles taches sont en retard ?</button
+              ><span class="demo-label">SIMULATION · PAS D'ANALYSE REELLE</span>
+            </aside>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="../js/i18n/fr.js"></script><script src="../js/i18n/en.js"></script><script src="../js/i18n/ar.js"></script><script src="../js/storage.js"></script><script src="../js/documents-store.js"></script><script src="../js/api.js"></script>
+    <script src="../js/auth-service.js"></script><script src="../js/main.js"></script>
+    <script src="../js/ai-assistant.js"></script>
+  </body>
+</html>

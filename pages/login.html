@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Connexion | BusinessFlow AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+  <body>
+    <main class="auth-page">
+      <div class="auth-brand">
+        <a class="brand" href="../index.html"
+          ><span class="brand-mark">↗</span>BusinessFlow
+          <span class="gradient-text">AI</span></a
+        >
+      </div>
+      <section class="auth-card card">
+        <span class="eyebrow">Bon retour</span>
+        <h1>Connectez-vous a votre espace</h1>
+        <p class="muted">Retrouvez vos activites et vos indicateurs.</p>
+        <div id="auth-message" aria-live="polite"></div>
+        <form id="login-form" novalidate>
+          <div class="form-field">
+            <label for="email">Adresse e-mail</label
+            ><input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="vous@entreprise.tn"
+              required
+            />
+          </div>
+          <div class="form-field">
+            <label for="password">Mot de passe</label
+            ><input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="Votre mot de passe"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <label class="check"
+              ><input type="checkbox" name="remember" /> Se souvenir de
+              moi</label
+            ><span class="muted">Les comptes de démonstration sont stockés uniquement dans ce navigateur.</span>
+          </div>
+          <button class="btn btn-primary full" type="submit">
+            Se connecter <span>→</span>
+          </button>
+        </form>
+        <p class="auth-switch">
+          Pas encore de compte ? <a href="register.html">Creer un compte</a>
+        </p>
+      </section>
+      <p class="auth-note">
+        Interface de demonstration · aucune donnee reelle n'est envoyee.
+      </p>
+    </main>
+    <script src="../js/i18n/fr.js"></script><script src="../js/i18n/en.js"></script><script src="../js/i18n/ar.js"></script>
+    <script src="../js/storage.js"></script><script src="../js/auth-service.js"></script><script src="../js/main.js"></script>
+    <script src="../js/auth.js"></script>
+  </body>
+</html>

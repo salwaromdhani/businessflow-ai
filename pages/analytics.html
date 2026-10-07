@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Analytics | BusinessFlow AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar"></aside>
+      <div class="app-content">
+        <header class="app-header">
+          <div style="display: flex; align-items: center">
+            <button
+              class="mobile-sidebar-toggle"
+              aria-label="Ouvrir la navigation"
+            >
+              ☰
+            </button>
+            <div>
+              <p class="eyebrow" style="margin: 0 0 4px">Pilotage</p>
+              <h1>Analytics</h1>
+            </div>
+          </div>
+          <div class="header-user">
+            <div class="avatar">CM</div>
+            <strong class="user-copy">Clara Martin</strong>
+          </div>
+        </header>
+        <main class="page-content">
+          <div class="panel-heading"><p class="muted">Explorez les indicateurs des espaces de démonstration et des imports locaux.</p><a class="btn btn-primary" href="data.html">Données ERP / CRM</a></div>
+          <section class="card panel" style="margin-top:18px">
+            <div class="panel-heading"><h2>Données importées</h2><span class="pill">Calcul local · TND</span></div>
+            <p id="import-analytics-note" class="muted">Importez un jeu de données ERP/CRM pour afficher ses indicateurs reconnus.</p>
+            <div id="import-analytics-kpis" class="chart-data"></div>
+            <div id="import-analytics-chart" class="chart-bars"></div>
+            <section id="analytics-local-insights" class="ai-insight" aria-live="polite"></section>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="../js/i18n/fr.js"></script><script src="../js/i18n/en.js"></script><script src="../js/i18n/ar.js"></script><script src="../js/storage.js"></script>
+    <script src="../js/auth-service.js"></script><script src="../js/main.js"></script>
+    <script src="../js/analytics.js"></script>
+  </body>
+</html>

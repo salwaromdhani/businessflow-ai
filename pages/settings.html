@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parametres | BusinessFlow AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar"></aside>
+      <div class="app-content">
+        <header class="app-header">
+          <div style="display: flex; align-items: center">
+            <button
+              class="mobile-sidebar-toggle"
+              aria-label="Ouvrir la navigation"
+            >
+              ☰
+            </button>
+            <div>
+              <p class="eyebrow" style="margin: 0 0 4px">Votre espace</p>
+              <h1>Parametres</h1>
+            </div>
+          </div>
+          <div class="header-user">
+            <div class="avatar">CM</div>
+            <strong class="user-copy">Clara Martin</strong>
+          </div>
+        </header>
+        <main class="page-content">
+          <div class="section-heading" style="margin-bottom: 24px">
+            <h2 style="font-size: 2rem">Preferences de l'espace</h2>
+            <p>Personnalisez votre experience BusinessFlow AI.</p>
+          </div>
+          <div class="settings-grid">
+            <section class="card panel">
+              <div class="panel-heading"><h2>Informations du profil</h2></div>
+              <form id="settings-form">
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label for="settings-first">Prénom</label
+                    ><input id="settings-first" name="firstName" value="" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="settings-last">Nom</label
+                    ><input id="settings-last" name="lastName" value="" required />
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="settings-email">Adresse e-mail</label
+                  ><input
+                    id="settings-email"
+                    name="email"
+                    type="email"
+                    value=""
+                    readonly
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="settings-role">Rôle</label
+                  ><input id="settings-role" value="" readonly />
+                </div>
+                <button class="btn btn-primary" type="submit">
+                  Enregistrer les modifications
+                </button>
+                <div id="settings-message" aria-live="polite"></div>
+              </form>
+            </section>
+            <section class="card panel">
+              <div class="panel-heading"><h2>Preferences</h2></div>
+              <label class="setting-row"
+                ><span
+                  ><strong>Notifications d'activite</strong
+                  ><small class="muted"
+                    >Recevoir un resume des activites.</small
+                  ></span
+                ><input type="checkbox" data-preference="activityNotifications" checked /></label
+              ><label class="setting-row"
+                ><span
+                  ><strong>Rapport hebdomadaire</strong
+                  ><small class="muted"
+                    >Un recapitulatif chaque lundi.</small
+                  ></span
+                ><input type="checkbox" data-preference="weeklyReport" checked /></label
+              ><label class="setting-row"
+                ><span
+                  ><strong>Mode compact</strong
+                  ><small class="muted"
+                    >Afficher plus d'informations a l'ecran.</small
+                  ></span
+                ><input type="checkbox" data-preference="compactMode"
+              /></label>
+              <div class="panel-heading" style="margin-top: 30px">
+                <h2>Espace de travail</h2>
+              </div>
+              <div class="workspace-chip">
+                <span class="brand-mark">NS</span
+                ><span
+                  ><strong>Nova Studio</strong
+                  ><small class="muted">Plan Demo · 4 membres</small></span
+                ><button class="icon-btn" id="edit-workspace" type="button" aria-label="Modifier">✎</button>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="../js/i18n/fr.js"></script><script src="../js/i18n/en.js"></script><script src="../js/i18n/ar.js"></script><script src="../js/storage.js"></script><script src="../js/auth-service.js"></script><script src="../js/main.js"></script>
+    <script src="../js/settings.js"></script>
+  </body>
+</html>
